@@ -1,0 +1,173 @@
+/* body {
+  margin: 0px;
+  padding: 0px;
+} */
+
+.main {
+  height: 500px;
+}
+
+/* LEFT SIDE */
+
+.left {
+  height: 860px;
+  background-image: url("../public/assets/ChatGPT\ Image\ May\ 18\,\ 2026\,\ 02_31_13\ PM.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.left p {
+  color: black;
+}
+.left img {
+  width: 200px;
+  box-shadow: 0px 0px 0px blue;
+}
+
+.left-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
+}
+
+.left-text h2 {
+  margin-bottom: 10px;
+}
+
+/* RIGHT SIDE */
+
+.right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+}
+
+.login-box {
+  width: 60%;
+}
+
+.logo {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.log {
+  margin-bottom: 5px;
+  font-size: 31px;
+  transition-duration: 2s;
+}
+
+.sub {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: gray;
+}
+.pass-email {
+  padding-left: 20px;
+}
+.email {
+  animation-delay: 1.5s;
+}
+.password {
+  height: 80px;
+  margin-top: 10px;
+  animation-delay: 1s;
+}
+.email label {
+  font-size: 15px;
+  display: block;
+}
+.password label {
+  font-size: 15px;
+  display: block;
+}
+
+/* input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+} */
+
+.forgot {
+  text-align: end;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #2a7de1;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  background: #3a7ca5;
+  color: white;
+  border-radius: 25px;
+  font-weight: 700;
+  animation-delay: 0.5s;
+}
+.email input {
+  width: 90%;
+  height: 60%;
+  padding: 10px 40px 10px 10px;
+  outline: none;
+  border-radius: 10px 10px;
+  border: 1px solid black;
+}
+.password input {
+  width: 90%;
+  height: 60%;
+  padding: 10px 40px 10px 10px;
+  outline: none;
+  border-radius: 10px 10px;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 46px;
+  left: 340px;
+  transform: translateY(-50%);
+  color: gray;
+}
+.sr-lab {
+  padding-left: 30px;
+  position: relative;
+  width: 250px;
+}
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.gIcon {
+  font-size: 20px;
+}
+
+.signup {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.signup span {
+  color: #2a7de1;
+  cursor: pointer;
+}
