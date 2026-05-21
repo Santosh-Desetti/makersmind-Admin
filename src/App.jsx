@@ -21,10 +21,12 @@ import Appoint from "./pages/Appointment";
 import Appointtonew from "./pages/Appointtonew";
 import Private from "./pages/Private";
 import Staff from "./pages/Staff";
+import Editdoctor from "./pages/Editdoctor";
+import Patientgrid from "./pages/Patientgrid";
+import Doctorlist from "./pages/Doctorlist";
 import "./App.css";
 import Pagerouts from "../Pagerouts";
 import Calender from "./pages/Calender";
-
 function App() {
 
   const [darkMode, setDarkMode] = useState(false);

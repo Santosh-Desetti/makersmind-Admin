@@ -5,15 +5,7 @@ import { MdMeetingRoom } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-  const [open, setOpen] = useState(false);
-  const [appOpen, setAppOpen] = useState(false);
-  const [layoutOpen, setLayoutOpen] = useState(false);
-  const [doctorOpen, setDoctorOpen] = useState(false);
-  const [patientOpen, setPatientOpen] = useState(false);
-  const [appointmentOpen, setAppointmentOpen] = useState(false);
-  const [leaveOpen, setLeaveOpen] = useState(false);
-  const [expenseOpen, setExpenseOpen] = useState(false);
-  const [invoiceOpen, setInvoiceOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(null);
   return (
     <>
       <div className="sidebar-wrapper">
@@ -312,44 +304,43 @@ function Sidebar() {
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
-                          setDoctorOpen(!doctorOpen);
+                          setOpenMenu(openMenu === "doctor" ? null : "doctor");
                         }}
-                        className={doctorOpen ? "active subdrop" : ""}
+                        className={openMenu === "doctor" ? "active subdrop" : ""}
                       >
                         <i className="ti ti-user-plus" />
                         <span>Doctors</span>
                         <span className="menu-arrow" />
                       </a>
 
-                      {doctorOpen && (
-                        <ul className="dropDowns">
+                      <ul
+                        className={`dropDowns ${openMenu === "doctor" ? "show" : ""
+                          }`}
+                      >
+                        <li>
+                          <Link to="/Doctors">
+                            Doctors
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/Doctors">
-                              Doctors
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/Doctordetails">
+                            Doctor Details
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/Doctordetails">
-                              Doctor Details
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/adddoctor">
+                            Add Doctor
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/adddoctor">
-                              Add Doctor
-                            </Link>
-                          </li>
-
-                          <li>
-                            <Link to="/doctorschedule">
-                              Doctor Schedule
-                            </Link>
-                          </li>
-
-                        </ul>
-                      )}
+                        <li>
+                          <Link to="/doctorschedule">
+                            Doctor Schedule
+                          </Link>
+                        </li>
+                      </ul>
 
                     </li>
                     <li className="submenu">
@@ -358,38 +349,37 @@ function Sidebar() {
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
-                          setPatientOpen(!patientOpen);
+                          setOpenMenu(openMenu === "patient" ? null : "patient");
                         }}
-                        className={patientOpen ? "active subdrop" : ""}
+                        className={openMenu === "patient" ? "active subdrop" : ""}
                       >
                         <i className="ti ti-user-heart" />
                         <span>Patients</span>
                         <span className="menu-arrow" />
                       </a>
 
-                      {patientOpen && (
-                        <ul className="dropDowns">
+                      <ul
+                        className={`dropDowns ${openMenu === "patient" ? "show" : ""
+                          }`}
+                      >
+                        <li>
+                          <Link to="/patientone">
+                            Patients
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/patientone">
-                              Patients
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/patientdetails">
+                            Patient Details
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/patientdetails">
-                              Patient Details
-                            </Link>
-                          </li>
-
-                          <li>
-                            <Link to="/createpatient">
-                              Create Patient
-                            </Link>
-                          </li>
-
-                        </ul>
-                      )}
+                        <li>
+                          <Link to="/createpatient">
+                            Create Patient
+                          </Link>
+                        </li>
+                      </ul>
 
                     </li>
 
@@ -400,90 +390,99 @@ function Sidebar() {
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
-                          setAppointmentOpen(!appointmentOpen);
+                          setOpenMenu(
+                            openMenu === "appointment" ? null : "appointment"
+                          );
                         }}
-                        className={appointmentOpen ? "active subdrop" : ""}
+                        className={
+                          openMenu === "appointment"
+                            ? "active subdrop"
+                            : ""
+                        }
                       >
                         <i className="ti ti-calendar-check" />
                         <span>Appointments</span>
                         <span className="menu-arrow" />
                       </a>
 
-                      {appointmentOpen && (
-                        <ul className="dropDowns">
+                      <ul
+                        className={`dropDowns ${openMenu === "appointment" ? "show" : ""
+                          }`}
+                      >
+                        <li>
+                          <Link to="/appointments">
+                            Appointments
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/appointments">
-                              Appointments
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/Appointtonew">
+                            New Appointment
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/Appointtonew">
-                              New Appointment
-                            </Link>
-                          </li>
-
-                          <li>
-                            <Link to="/calender">
-                              Calendar
-                            </Link>
-                          </li>
-
-                        </ul>
-                      )}
+                        <li>
+                          <Link to="/calender">
+                            Calendar
+                          </Link>
+                        </li>
+                      </ul>
 
                     </li>
+
+
                     <li className="submenu">
+
                       <a
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
-                          setLeaveOpen(!leaveOpen);
+                          setOpenMenu(openMenu === "leave" ? null : "leave");
                         }}
-                        className={leaveOpen ? "active subdrop" : ""}
+                        className={openMenu === "leave" ? "active subdrop" : ""}
                       >
                         <MdMeetingRoom />
                         <span>Room Allotments</span>
                         <span className="menu-arrow" />
                       </a>
 
-                      {leaveOpen && (
-                        <ul className="dropDowns">
+                      <ul
+                        className={`dropDowns ${openMenu === "leave" ? "show" : ""
+                          }`}
+                      >
+                        <li>
+                          <Link to="/ICU">
+                            ICU
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/ICU">
-                              ICU
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/General">
+                            General
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/General">
-                              General
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/Private">
+                            Private
+                          </Link>
+                        </li>
 
-                          <li>
-                            <Link to="/Private">
-                              Private
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/Emenrgency">
-                              Emenrgency
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/ChildCare">
-                              Child Care
-                            </Link>
-                          </li>
+                        <li>
+                          <Link to="/patientsgrid">
+                            Emergency
+                          </Link>
+                        </li>
 
-                        </ul>
-                      )}
+                        <li>
+                          <Link to="/ChildCare">
+                            Child Care
+                          </Link>
+                        </li>
+                      </ul>
 
                     </li>
-
+                    {/* 
                     <li>
 
                       <Link to="/locations">
@@ -508,16 +507,16 @@ function Sidebar() {
                         <i className="ti ti-user-shield" />
                         <span>Specializations</span>
                       </Link>
-                    </li>
+                    </li> */}
 
                     <li>
-                      <Link to="/assets">
+                      <Link to="/">
                         <i className="ti ti-asset" />
                         <span>Assets</span>
                       </Link>
                     </li>
 
-                    <li>
+                    {/* <li>
                       <Link to="/activities">
                         <i className="ti ti-activity" />
                         <span>Activities</span>
@@ -529,7 +528,7 @@ function Sidebar() {
                         <i className="ti ti-messages" />
                         <span>Messages</span>
                       </Link>
-                    </li>
+                    </li> */}
 
                   </ul>
                 </li>
@@ -596,16 +595,16 @@ function Sidebar() {
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
-                          setExpenseOpen(!expenseOpen);
+                          setOpenMenu(openMenu === "expense" ? null : "expense");
                         }}
-                        className={expenseOpen ? "active subdrop" : ""}
+                        className={openMenu === "expense" ? "active subdrop" : ""}
                       >
                         <i className="ti ti-credit-card" />
                         <span>Expenses</span>
                         <span className="menu-arrow" />
                       </a>
 
-                      {expenseOpen && (
+                      {openMenu === "expense" && (
                         <ul className="dropDowns">
 
                           <li>
@@ -636,16 +635,16 @@ function Sidebar() {
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
-                          setInvoiceOpen(!invoiceOpen);
+                          setOpenMenu(openMenu === "invoice" ? null : "invoice");
                         }}
-                        className={invoiceOpen ? "active subdrop" : ""}
+                        className={openMenu === "invoice" ? "active subdrop" : ""}
                       >
                         <i className="ti ti-file-invoice" />
                         <span>Invoices</span>
                         <span className="menu-arrow" />
                       </a>
 
-                      {invoiceOpen && (
+                      {openMenu === "invoice" && (
                         <ul className="dropDowns">
 
                           <li>

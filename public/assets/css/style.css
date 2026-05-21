@@ -937,6 +937,12 @@ background-color: #FCEFF3;
   }
 
 }
+
+/* loginpage */
+
+/* loginpage */
+
+
 /* childcard */
 .occupied2,
 .occupied-cards,
@@ -1373,6 +1379,10 @@ body.dark .dropdown {
    font-size: 15px;
 }
 
+
+/* sidebarcss */
+
+/* sidebarcss */
 /* mycss */
 .navbar-header #toggle_btn2 {
   display: none;
@@ -5224,7 +5234,9 @@ Author URL: https://themeforest.net/user/dreamstechnologies
   border-color: var(--border-color);
   color: var(--gray-900);
 }
-
+.btn-primary {
+    font-size: 11px !important;
+}
 .btn-primary {
   color: #fff;
   background-color: var(--primary);
@@ -8027,16 +8039,35 @@ select.form-control-sm:not([size]):not([multiple]) {
   left: 12px;
   right: auto;
 }
-
+.checkedout{
+     text-transform: none;
+     width: 100%;
+    border: 1px solid var(--border-color);
+    height: 38px;
+    background-color: var(--white);
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 0px;
+}
+.select{
+      text-transform: none;
+    width: 398px;
+    border: 1px solid var(--border-color);
+    height: 38px;
+    background-color: var(--white);
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 0px;
+}
 .select2-container {
   width: 100% !important;
 }
 .select2-container .select2-selection--single {
-  border: 1px solid var(--border-color);
-  height: calc(1.5em + 1rem + 2px);
-  background-color: var(--white);
-  outline: none;
-  border-radius: 5px;
+    border: 1px solid var(--border-color);
+    height: 38px;
+    background-color: var(--white);
+    outline: none;
+    border-radius: 5px;
 }
 .select2-container .select2-selection--single .select2-selection__rendered {
   line-height: 38px;

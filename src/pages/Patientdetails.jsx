@@ -83,7 +83,7 @@ function Patientdetails(){
                 <i className="ti ti-video" />
               </a>
             </div>
-            <a href="new-appointment.html" className="btn btn-primary">
+            <a href="Newappoint" className="btn btn-primary">
               <i className="ti ti-calendar-event me-1" />
               Book Apppointment
             </a>

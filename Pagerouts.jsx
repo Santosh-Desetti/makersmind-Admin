@@ -1,5 +1,4 @@
 import React from "react"; 
-import { Routes, Route } from "react-router-dom";
 import Patient from "./src/pages/Patient ";
 import Newappointment from "./src/pages/Newappointment";
 import Dashboard from "./src/pages/Dashboard";
@@ -20,6 +19,14 @@ import Calender from "./src/pages/Calender";
 import Appointtonew from "./src/pages/Appointtonew";
 import Private from "./src/pages/Private";
 import Staff from "./src/pages/Staff";
+
+
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Editdoctor from "./src/pages/Editdoctor";
+import Patientgrid from "./src/pages/Patientgrid";
+import Doctorlist from "./src/pages/Doctorlist";
+import Sidebar from "./src/Shared/Sidebar";
+
 const Pagerouts =()=>{
     return(
        <Routes>
@@ -44,8 +51,13 @@ const Pagerouts =()=>{
         <Route path="/Appointtonew" element={<Appointtonew/>}/>
         <Route path="Private" element={<Private/>}/>
         <Route path="staffs" element={<Staff/>}/>
+        <Route path="/Editdoctor" element={<Editdoctor/>}/>
+        <Route path="/Patientsgrid" element={<Patientgrid/>}/>
+        <Route path="/Doctorlist" element={<Doctorlist/>}/>
+        <Route path="/Sidebar" element={<Sidebar/>}/>
 
         
+
         
        </Routes> 
     );
